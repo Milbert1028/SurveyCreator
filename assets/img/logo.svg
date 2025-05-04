@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="200" viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient definition -->
+  <defs>
+    <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3a5cdb"/>
+      <stop offset="100%" stop-color="#1a3aa0"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Logo group -->
+  <g id="surveyCreatorLogo">
+    <!-- Logo symbol -->
+    <g id="logoSymbol" transform="translate(50, 50)">
+      <!-- Background rounded rectangle -->
+      <rect x="0" y="0" width="100" height="100" rx="15" fill="url(#logoGradient)" />
+      
+      <!-- Survey clipboard icon -->
+      <rect x="25" y="20" width="50" height="65" rx="5" fill="white" />
+      
+      <!-- Clipboard top -->
+      <rect x="40" y="15" width="20" height="10" rx="3" fill="white" />
+      
+      <!-- Survey chart bars -->
+      <rect x="33" y="35" width="10" height="40" fill="url(#logoGradient)" />
+      <rect x="48" y="45" width="10" height="30" fill="url(#logoGradient)" />
+      <rect x="63" y="30" width="10" height="45" fill="url(#logoGradient)" />
+    </g>
+    
+    <!-- Logo text -->
+    <g id="logoText" transform="translate(170, 95)">
+      <text font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="#2f4bbd">
+        Survey<tspan fill="#0d2c8a">Creator</tspan>
+      </text>
+      
+      <!-- Tagline -->
+      <text font-family="Arial, sans-serif" font-size="16" font-weight="normal" fill="#4a4a4a" x="5" y="30">
+        Create. Collect. Analyze.
+      </text>
+    </g>
+  </g>
+</svg> 

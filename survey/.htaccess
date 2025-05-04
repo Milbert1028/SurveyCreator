@@ -1,0 +1,63 @@
+# Enable rewrite engine
+RewriteEngine On
+
+# Set the base for rewrites
+RewriteBase /
+
+# Prevent directory listing
+Options -Indexes
+
+# Set default charset
+AddDefaultCharset UTF-8
+
+# Security headers
+<IfModule mod_headers.c>
+    # Protect against XSS attacks
+    Header set X-XSS-Protection "1; mode=block"
+    # Prevent MIME-sniffing
+    Header set X-Content-Type-Options "nosniff"
+    # Referrer policy
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    # Frame options
+    Header set X-Frame-Options "SAMEORIGIN"
+</IfModule>
+
+# Handle request to /dashboard (without trailing slash)
+RewriteRule ^dashboard$ /dashboard/ [R=301,L]
+
+# PHP error handling
+php_flag display_errors Off
+php_value error_reporting E_ALL
+php_flag log_errors On
+php_value error_log logs/php_errors.log
+
+# Increase max upload size
+php_value upload_max_filesize 10M
+php_value post_max_size 10M
+
+# Increase max execution time
+php_value max_execution_time 300
+php_value max_input_time 300
+
+# Protect sensitive files
+<FilesMatch "^\.(.+)$|^php\.ini$|^\.htaccess$|^\.htpasswd$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Protect config files
+<FilesMatch "config\.php$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Allow direct access to index files
+<FilesMatch "^index\.php$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>
+
+# Custom error documents
+ErrorDocument 403 /error.php?code=403
+ErrorDocument 404 /error.php?code=404
+ErrorDocument 500 /error.php?code=500 

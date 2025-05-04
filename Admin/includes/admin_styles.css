@@ -1,0 +1,320 @@
+/* 
+ * Admin Panel Styles - Updated for Bootstrap 5
+ * Responsive design for desktop and mobile devices
+ */
+
+:root {
+    --admin-primary: #4e73df;
+    --admin-primary-hover: #224abe;
+    --admin-secondary: #6c757d;
+    --admin-light: #f8f9fc;
+    --admin-dark: #5a5c69;
+    --admin-success: #1cc88a;
+    --admin-danger: #e74a3b;
+    --admin-warning: #f6c23e;
+    --admin-info: #36b9cc;
+    --admin-sidebar-width: 250px;
+    --admin-transition: all 0.3s ease;
+}
+
+/* Main Layout */
+body {
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--admin-light);
+}
+
+.admin-container {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Sidebar */
+.admin-sidebar {
+    width: var(--admin-sidebar-width);
+    background: linear-gradient(135deg, var(--admin-primary) 0%, var(--admin-primary-hover) 100%);
+    color: white;
+    position: fixed;
+    height: 100vh;
+    overflow-y: auto;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.15);
+    z-index: 100;
+    transition: var(--admin-transition);
+}
+
+.sidebar-header {
+    padding: 1.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.back-to-site {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.2rem;
+    transition: color 0.2s;
+}
+
+.back-to-site:hover {
+    color: white;
+}
+
+.sidebar-user {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.user-avatar {
+    margin-right: 0.75rem;
+    font-size: 2rem;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-weight: 600;
+}
+
+.user-role {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.sidebar-nav {
+    padding: 1rem 0;
+}
+
+.sidebar-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar-nav li a {
+    display: flex;
+    align-items: center;
+    padding: 0.85rem 1.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: var(--admin-transition);
+}
+
+.sidebar-nav li a:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-nav li.active a {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+    font-weight: 600;
+}
+
+.sidebar-nav li a i {
+    width: 1.5rem;
+    text-align: center;
+    margin-right: 0.75rem;
+}
+
+.sidebar-footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: auto;
+}
+
+.sidebar-footer a {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.2rem;
+    transition: color 0.2s;
+}
+
+.sidebar-footer a:hover {
+    color: white;
+}
+
+/* Main Content */
+.admin-content {
+    flex: 1;
+    padding: 1rem;
+    margin-left: var(--admin-sidebar-width);
+    transition: var(--admin-transition);
+}
+
+.admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.admin-header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--admin-dark);
+    display: flex;
+    align-items: center;
+}
+
+.admin-header h1 i {
+    margin-right: 0.5rem;
+}
+
+/* Top Navigation Bar */
+.top-nav {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+}
+
+.user-menu .dropdown-toggle {
+    background-color: white;
+    border: 1px solid #e3e6f0;
+    color: var(--admin-dark);
+}
+
+.user-menu .dropdown-toggle:focus,
+.user-menu .dropdown-toggle:hover {
+    background-color: #f8f9fc;
+}
+
+/* Cards */
+.data-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.1);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+.card-header {
+    padding: 1rem 1.5rem;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e3e6f0;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--admin-dark);
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+/* Footer */
+.admin-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-top: 1px solid #e3e6f0;
+    margin-top: 2rem;
+    color: var(--admin-secondary);
+    font-size: 0.85rem;
+}
+
+/* Mobile Toggle Button */
+.mobile-toggle {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 1050;
+}
+
+/* Responsive Sidebar Collapsing */
+.sidebar-collapsed .admin-sidebar {
+    transform: translateX(-100%);
+}
+
+.sidebar-collapsed .admin-content {
+    margin-left: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .admin-sidebar {
+        transform: translateX(-100%);
+    }
+    
+    .admin-content {
+        margin-left: 0;
+    }
+    
+    .admin-sidebar.active {
+        transform: translateX(0);
+    }
+    
+    .mobile-toggle {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .search-form {
+        width: 100%;
+        margin-top: 1rem;
+    }
+    
+    .search-form .input-group {
+        width: 100%;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .admin-sidebar, 
+    .mobile-toggle,
+    .btn-primary,
+    .btn-secondary,
+    .btn-danger,
+    .btn-warning,
+    .btn-success,
+    .no-print {
+        display: none !important;
+    }
+    
+    .admin-content {
+        margin-left: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .data-card {
+        box-shadow: none !important;
+        border: 1px solid #ddd !important;
+    }
+} 
